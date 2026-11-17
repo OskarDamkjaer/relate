@@ -118,10 +118,8 @@ impl RequestHead {
 /// vendor family, consulted at every parse and emit site.
 pub(crate) const APPLICATION_JSON: &str = "application/json";
 
-/// The Query API v2 media type family's root: responses answer the bare
-/// `application/vnd.neo4j.query`, requests carry a versioned member
-/// (`.v1.2`, `.v1.0+jsonl`) — the bare spelling is a fail-closed 400 as a
-/// request Content-Type (ADR-0425).
+/// The Query API v2 media type family's root, also the legacy v1.0
+/// request alias (ADR-0425).
 pub(crate) const VND_NEO4J_QUERY: &str = "application/vnd.neo4j.query";
 
 /// A media-type header value normalized the one way every consumer needs
@@ -133,10 +131,8 @@ pub(crate) fn lowercased_media_type(value: &str) -> String {
 
 /// Whether a (lowercased) media-type token is a **versioned** member of
 /// the `application/vnd.neo4j.query` family (`.v1.2`, `.v1.0+jsonl`, …) —
-/// the request spelling real servers accept (ADR-0425). The one
-/// classifier both consumers consult: the request dialect's family arm
-/// and the Accept negotiation (which additionally matches the bare root —
-/// responses answer the bare type, requests never carry it). It lives
+/// the versioned spellings accepted by the request dialect and Accept
+/// negotiation, which both additionally match the bare v1.0 alias. It lives
 /// beside [`RequestHead::media_token`], the strip every one of those
 /// consumers already imports, so the media-type vocabulary has one home
 /// neither the request nor the response module owns.
