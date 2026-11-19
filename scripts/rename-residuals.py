@@ -83,7 +83,7 @@ KEEP_LINE_PATTERNS = (
 ENV_GUARD_FILES = (
     "relate/relate/src/open_config.rs",
     "surfaces/relate-cli/src/main.rs",
-    "surfaces/relate-cli/tests/e2e_version.rs",
+    "surfaces/relate-cli/tests/integration/e2e_version.rs",
 )
 ENV_NAME = re.compile(r"cypherlite_", re.IGNORECASE)
 

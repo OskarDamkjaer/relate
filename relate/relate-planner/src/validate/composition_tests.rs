@@ -85,7 +85,7 @@ fn write_before_call_in_transactions_is_rejected() {
 /// continuation is rejected — `WITH`, `RETURN` and `FINISH` alike (live
 /// 2026.10.1, probed 2026-11-08; the front end's own scope check owns the
 /// `SET` form). The SHOW commands project rows and compose freely; their
-/// acceptance is pinned in `relate/relate/tests/ddl_result_shape.rs`.
+/// acceptance is pinned in `relate/relate/tests/integration/ddl_result_shape.rs`.
 /// `ALTER DATABASE` is a family member by grammar (live rejects every
 /// continuation) but cannot serve as this pin's head: the front end's
 /// own administration gate answers first with its unsupported-command

@@ -330,7 +330,7 @@ rate.
   without the aggregating mask here, so the superset holds by construction.
   A path that collects a generated `UNWIND`
   feed for a folding consumer is a regression:
-  `relate/relate/tests/order_by_top_k_bounds.rs::
+  `relate/relate/tests/integration/order_by_top_k_bounds.rs::
   unwind_streams_into_the_window_whatever_the_input_count` fails on it
   (a 2M-row windowed answer refuses under a 16 MiB pool the moment the
   input is held)
